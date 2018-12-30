@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Com.MarcusTS.SmartDI.LifecycleAware</PackageId>
+    <Authors>Stephen Marcus</Authors>
+    <Company>Marcus Technical Services, Inc.</Company>
+    <Product>Smart DI Container with Lifecycle</Product>
+    <Description>Adds lifecycle support to the Smart DI Container.</Description>
+    <Copyright>@2018 Marcus Technical Services, Inc.</Copyright>
+    <PackageTags>ioc ioc-container di di-container object-lifecycle smart-di-container</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <PackageReleaseNotes>General debug</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>D:\Dev\MtsShared\LifecycleAware\Com.MarcusTS.SmartDI.LifecycleAware.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Com.MarcusTS.LifecycleAware" Version="1.0.10" />
+    <PackageReference Include="Com.MarcusTS.SharedUtils" Version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartDI\Com.MarcusTS.SmartDI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Com.MarcusTS.SmartDI.LifecycleAware.nuspec">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Com.MarcusTS.SmartDI.LifecycleAware.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
