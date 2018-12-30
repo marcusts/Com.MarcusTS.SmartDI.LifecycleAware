@@ -24,10 +24,7 @@
   <ItemGroup>
     <PackageReference Include="Com.MarcusTS.LifecycleAware" Version="1.0.10" />
     <PackageReference Include="Com.MarcusTS.SharedUtils" Version="1.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SmartDI\Com.MarcusTS.SmartDI.csproj" />
+    <PackageReference Include="Com.MarcusTS.SmartDI" Version="1.0.10" />
   </ItemGroup>
 
   <ItemGroup>
