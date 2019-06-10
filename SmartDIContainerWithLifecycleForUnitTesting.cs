@@ -1,11 +1,6 @@
 ﻿// *********************************************************************************
-// Assembly         : Com.MarcusTS.SmartDI.LifecycleAware
-// Author           : Stephen Marcus (Marcus Technical Services, Inc.)
-// Created          : 12-26-2018
-// Last Modified On : 12-27-2018
-//
-// <copyright file="SmartDIContainerWithLifecycleForUnitTesting.cs" company="Com.MarcusTS.SmartDI.LifecycleAware">
-//     Copyright (c) . All rights reserved.
+// <copyright file=SmartDIContainerWithLifecycleForUnitTesting.cs company="Marcus Technical Services, Inc.">
+//     Copyright @2019 Marcus Technical Services, Inc.
 // </copyright>
 //
 // MIT License
@@ -31,51 +26,47 @@
 
 namespace Com.MarcusTS.SmartDI.LifecycleAware
 {
-   using SharedForms.Utils;
+   using Com.MarcusTS.SharedForms.Utils;
 
    /// <summary>
-   /// Interface ISmartDIContainerWithLifecycleForUnitTesting
-   /// Implements the <see cref="Com.MarcusTS.SmartDI.ISmartDIContainerForUnitTesting" />
+   ///    Interface ISmartDIContainerWithLifecycleForUnitTesting
+   ///    Implements the <see cref="Com.MarcusTS.SmartDI.ISmartDIContainerForUnitTesting" />
    /// </summary>
    /// <seealso cref="Com.MarcusTS.SmartDI.ISmartDIContainerForUnitTesting" />
    public interface ISmartDIContainerWithLifecycleForUnitTesting : ISmartDIContainerForUnitTesting
-   { }
+   {
+   }
 
    /// <summary>
-   /// Class SmartDIContainerWithLifecycleForUnitTesting.
-   /// Implements the <see cref="Com.MarcusTS.SmartDI.SmartDIContainerForUnitTesting" />
-   /// Implements the <see cref="Com.MarcusTS.SmartDI.LifecycleAware.ISmartDIContainerWithLifecycleForUnitTesting" />
+   ///    Class SmartDIContainerWithLifecycleForUnitTesting.
+   ///    Implements the <see cref="Com.MarcusTS.SmartDI.SmartDIContainerForUnitTesting" />
+   ///    Implements the <see cref="Com.MarcusTS.SmartDI.LifecycleAware.ISmartDIContainerWithLifecycleForUnitTesting" />
    /// </summary>
    /// <seealso cref="Com.MarcusTS.SmartDI.SmartDIContainerForUnitTesting" />
    /// <seealso cref="Com.MarcusTS.SmartDI.LifecycleAware.ISmartDIContainerWithLifecycleForUnitTesting" />
    public class SmartDIContainerWithLifecycleForUnitTesting : SmartDIContainerForUnitTesting,
                                                               ISmartDIContainerWithLifecycleForUnitTesting
    {
-      #region Public Constructors
-
       /// <summary>
-      /// Initializes a new instance of the <see cref="SmartDIContainerWithLifecycleForUnitTesting" /> class.
+      ///    Initializes a new instance of the <see cref="SmartDIContainerWithLifecycleForUnitTesting" /> class.
       /// </summary>
       public SmartDIContainerWithLifecycleForUnitTesting()
       {
          FormsMessengerUtils.Subscribe<ObjectDisappearingMessage>(this, OnObjectDisappearing);
       }
 
-      #endregion Public Constructors
-
-      #region Private Methods
-
       /// <summary>
-      /// Called when [object disappearing].
+      ///    Called when [object disappearing].
       /// </summary>
       /// <param name="sender">The sender.</param>
       /// <param name="mess">The mess.</param>
-      private void OnObjectDisappearing(object                    sender,
-                                        ObjectDisappearingMessage mess)
+      private void OnObjectDisappearing
+      (
+         object                    sender,
+         ObjectDisappearingMessage mess
+      )
       {
          ContainerObjectIsDisappearing(mess.Payload);
       }
-
-      #endregion Private Methods
    }
 }
