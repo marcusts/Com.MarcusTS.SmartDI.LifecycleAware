@@ -26,7 +26,7 @@
 
 namespace Com.MarcusTS.SmartDI.LifecycleAware
 {
-   using Com.MarcusTS.SharedForms.Utils;
+   using Com.MarcusTS.SharedForms.Common.Notifications;
 
    /// <summary>
    ///    Interface ISmartDIContainerWithLifecycle
